@@ -17,7 +17,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".SignUpActivity" />
-        <activity android:name=".ProfileActivity"></activity>
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".EmailVerifyPage" />
+        <activity android:name=".HalloAuth"></activity>
     </application>
 
 </manifest>
