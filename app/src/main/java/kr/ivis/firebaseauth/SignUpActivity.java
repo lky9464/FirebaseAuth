@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
@@ -77,10 +76,9 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
             public void onComplete(@NonNull Task<AuthResult> task) {
                 progressBar.setVisibility(View.GONE);
                 if(task.isSuccessful()) {
-                    Toast.makeText(getApplicationContext(), "회원가입이 완료되었습니다!", Toast.LENGTH_SHORT).show();
-                    Log.i("ala", FirebaseAuth.getInstance().getCurrentUser().toString() + "asdfasdf");
                     Intent intent = new Intent(SignUpActivity.this, EmailVerifyPage.class);
                     startActivity(intent);
+                    finish();
 
                 }else{
                     Toast.makeText(getApplicationContext(), "문제가 있습니다.", Toast.LENGTH_SHORT).show();
